@@ -1,60 +1,191 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>MISSION : STRATEGIE FDB 2.0</title>
-        <style>
-                :root {
-                            --rct-red: #e60000;
-                            --fdb-gold: #c5a059;
-                }
-                body {
-                            margin: 0;
-                            font-family: 'Inter', sans-serif;
-                            background-color: #0a0a0a;
-                            color: #fff;
-                }
-                .hero {
-                            height: 100vh;
-                            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('../assets/stade_rct_background.png');
-                            background-size: cover;
-                            background-position: center;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            text-align: center;
-                }
-                .hero h1 {
-                            font-size: clamp(3rem, 10vw, 5rem);
-                            letter-spacing: -2px;
-                }
-                .hero-sub {
-                            color: var(--rct-red);
-                            font-family: 'Space Mono', monospace;
-                            letter-spacing: 3px;
-                }
-                #conclusion .btn {
-                            display: inline-block;
-                            padding: 1.5rem 4rem;
-                            background: var(--rct-red);
-                            color: #fff;
-                            text-decoration: none;
-                            font-weight: 800;
-                            text-transform: uppercase;
-                            letter-spacing: 3px;
-                }
-                </style>
-    </head>
-    <body>
-            <section class="hero">
-                        <div class="hero-content">
-                                        <span class="hero-sub">RAPPORT DE RENSEIGNEMENT // CONFIDENTIEL</span>span>
-                                        <h1>MISSION : STRATEGIE FDB 2.0</h1>
-                        </div>div>
-            </section>section>
-    </body>
-</html>html></h1>
-    </body>
-        </style></title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FDB — Bilan Tactique Saison 2025</title>
+    <link rel="stylesheet" href="../04_Presentation/style_fdb.css">
+    <style>
+        .audit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 4rem; }
+        .audit-card { background: var(--surface); border: 1px solid var(--border); padding: 2rem; }
+        .audit-card.negative { border-left: 4px solid #ff4444; }
+        .audit-card.positive { border-left: 4px solid #44ff44; }
+        .metric-big { font-size: 4rem; font-weight: 800; color: var(--rct-red); margin-bottom: 1rem; }
+        .perception-meter { width: 100%; height: 10px; background: rgba(255,255,255,0.1); margin: 2rem 0; position: relative; }
+        .perception-bar { height: 100%; background: var(--rct-red); width: 45%; }
+        .perception-label { display: flex; justify-content: space-between; font-family: 'Space Mono', monospace; font-size: 0.7rem; }
+        .vs-line { border-top: 1px dashed var(--border); margin: 4rem 0; position: relative; }
+        .vs-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--bg); padding: 0 1rem; font-family: 'Space Mono', monospace; color: var(--rct-red); }
+        blockquote { font-style: italic; color: var(--fdb-gold); border-left: 3px solid var(--fdb-gold); padding-left: 2rem; margin: 2rem 0; line-height: 1.6; }
+        
+        #conclusion .btn {
+            display: inline-block;
+            padding: 1.5rem 4rem;
+            background: var(--rct-red);
+            color: #fff;
+            text-decoration: none;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        #conclusion .btn:hover {
+            transform: scale(1.05);
+            background: #e60000;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="loader">
+        <img src="../assets/icone_seule_rouge.svg" class="loader-logo" alt="FDB">
+        <div id="loader-bar"><div id="loader-bar-fill"></div></div>
+    </div>
+
+    <section class="hero" style="background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('../assets/stade_rct_background.png'); background-size: cover; background-position: center;">
+        <div class="hero-content">
+            <span class="hero-sub" style="color: var(--rct-red);">RAPPORT DE RENSEIGNEMENT // CONFIDENTIEL</span>
+            <h1>
+                <span><span class="line-content">BILAN</span></span>
+                <span><span class="line-content"><em>TACTIQUE</em> 2025</span></span>
+            </h1>
+            <p style="margin-top: 2rem; opacity: 0.7; font-family: 'Space Mono', monospace; letter-spacing: 2px;">ANALYSE DE PERCEPTION & PERFORMANCE DIGITALE</p>
+        </div>
+    </section>
+
+    <section id="verdict">
+        <span class="section-tag">01 — Le Verdict</span>
+        <div class="reveal">
+            <h2>Le terrain ne ment pas.</h2>
+            <p style="max-width: 800px; color: rgba(255,255,255,0.7); line-height: 1.8; font-size: 1.1rem;">
+                L'an dernier, vous avez déployé une énergie colossale pour faire vivre l'association. Mais sur le plan de la communication, vous avez combattu avec une main attachée dans le dos. L'absence d'outils de production adaptés a transformé votre identité d'élite en une image de "bricolage".
+            </p>
+        </div>
+
+        <div class="audit-grid reveal">
+            <div class="audit-card negative">
+                <h4 style="color: #ff4444; margin-bottom: 1rem; font-family: 'Space Mono', monospace;">L'ERREUR TACTIQUE</h4>
+                <p><strong>La Création Subie.</strong> Chaque post a été une "corvée". Résultat : perte de cohérence, typographies disparates, logos mal utilisés. Le temps passé à "essayer de faire beau" a été volé à la stratégie.</p>
+            </div>
+            <div class="audit-card negative">
+                <h4 style="color: #ff4444; margin-bottom: 1rem; font-family: 'Space Mono', monospace;">LA FAILLE DE PERCEPTION</h4>
+                <p><strong>L'image "Amateur".</strong> Un nouveau venu qui visite votre Instagram voit de la passion, mais pas de la structure. Cela freine l'adhésion des profils exigeants qui veulent rejoindre une organisation leader.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="evidence">
+        <span class="section-tag">02 — Pièces à Conviction</span>
+        <div class="reveal">
+            <h2>Analyse de la Saison Écoulée.</h2>
+            <p style="color: var(--fdb-gold); font-family: 'Space Mono', monospace; font-size: 0.8rem; margin-bottom: 3rem;">AUDIT RÉALISÉ SUR VOTRE FEED INSTAGRAM (AVRIL 2026)</p>
+        </div>
+
+        <div class="audit-grid reveal">
+            <div class="audit-card">
+                <h3 style="font-size: 1.1rem; color: var(--fdb-gold); margin-bottom: 1rem;">1. Surcharge Cognitive</h3>
+                <p style="font-size: 0.85rem; line-height: 1.6;">
+                    <strong>Exemple : Le post "Programme Toulon-Bayonne".</strong><br>
+                    C'est l'erreur du "Flyer Papier". Trop de texte, trop petit, illisible sur smartphone. L'abonné scrolle car l'effort de lecture est trop important.
+                </p>
+                <div style="margin-top: 1rem; padding: 1rem; background: rgba(255,68,68,0.1); border: 1px solid rgba(255,68,68,0.3); font-size: 0.75rem;">
+                    SYMPTÔME : Baisse massive du taux d'engagement sur les infos pratiques.
+                </div>
+            </div>
+
+            <div class="audit-card">
+                <h3 style="font-size: 1.1rem; color: var(--fdb-gold); margin-bottom: 1rem;">2. Chaos Typographique</h3>
+                <p style="font-size: 0.85rem; line-height: 1.6;">
+                    <strong>Exemple : Mélange de polices génériques.</strong><br>
+                    Arial, Helvetica, Gras penché... On perd la "voix" institutionnelle des FDB. Sans police de caractère forte (comme Ysabeau), vous ressemblez à n'importe quel autre compte local.
+                </p>
+                <div style="margin-top: 1rem; padding: 1rem; background: rgba(255,68,68,0.1); border: 1px solid rgba(255,68,68,0.3); font-size: 0.75rem;">
+                    SYMPTÔME : Perte de reconnaissance immédiate de la marque dans le feed.
+                </div>
+            </div>
+
+            <div class="audit-card">
+                <h3 style="font-size: 1.1rem; color: var(--fdb-gold); margin-bottom: 1rem;">3. Rouge Informatique (#FF0000)</h3>
+                <p style="font-size: 0.85rem; line-height: 1.6;">
+                    <strong>Exemple : Titres et logos saturés.</strong><br>
+                    Le rouge utilisé est plat, sans profondeur. Il jure avec l'identité historique du RCT qui demande un rouge de caractère, "sang et acier". L'aspect visuel en devient "cheap".
+                </p>
+                <div style="margin-top: 1rem; padding: 1rem; background: rgba(255,68,68,0.1); border: 1px solid rgba(255,68,68,0.3); font-size: 0.75rem;">
+                    SYMPTÔME : Dévaluation de la valeur perçue de l'association.
+                </div>
+            </div>
+
+            <div class="audit-card">
+                <h3 style="font-size: 1.1rem; color: var(--fdb-gold); margin-bottom: 1rem;">4. Absence de Rythme</h3>
+                <p style="font-size: 0.85rem; line-height: 1.6;">
+                    <strong>Exemple : Grille Instagram désordonnée.</strong><br>
+                    Pas de schéma de couleurs, pas de templates unifiés pour les Reels. Le feed ressemble à une galerie personnelle, pas à l'organe de presse d'un collectif de supporters leader.
+                </p>
+                <div style="margin-top: 1rem; padding: 1rem; background: rgba(255,68,68,0.1); border: 1px solid rgba(255,68,68,0.3); font-size: 0.75rem;">
+                    SYMPTÔME : Difficulité à convertir les visiteurs en nouveaux abonnés/adhérents.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="psychologie">
+        <span class="section-tag">03 — Diagnostic de Perception</span>
+        <div class="reveal">
+            <h2>L'Écart de Force.</h2>
+        </div>
+        
+        <div class="reveal" style="margin-top: 4rem;">
+            <div class="perception-label">
+                <span>SIGNAL PROJETÉ (RÉALITÉ ACTUELLE)</span>
+                <span>SIGNAL ATTENDU (L'ÉLITE DU RCT)</span>
+            </div>
+            <div class="perception-meter">
+                <div class="perception-bar" style="width: 35%;"></div>
+            </div>
+            <div class="perception-label">
+                <span style="color: #ff4444;">LOCAL / ARTISANAL / BROUILLON</span>
+                <span style="color: #44ff44;">PUISSANT / INSTITUTIONNEL / INCONTOURNABLE</span>
+            </div>
+        </div>
+
+        <div class="reveal" style="margin-top: 4rem;">
+            <h3>Pourquoi ça n'a pas "mordu" ?</h3>
+            <div class="audit-grid">
+                <div>
+                    <p style="margin-bottom: 1rem;"><strong>1. Le Bruit Visuel :</strong></p>
+                    <p style="color: rgba(255,255,255,0.5); font-size: 0.9rem;">Des visuels trop chargés où l'information se perd. L'œil n'est pas guidé, le message est dilué. On voit les pixels, on ne voit plus le message.</p>
+                </div>
+                <div>
+                    <p style="margin-bottom: 1rem;"><strong>2. Le Manque de Signature :</strong></p>
+                    <p style="color: rgba(255,255,255,0.5); font-size: 0.9rem;">Rien ne permet de dire instantanément "C'est un post FDB" avant de lire le pseudo. La marque n'occupe pas le terrain mental de l'abonné.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="conclusion" style="background: var(--surface);">
+        <span class="section-tag">03 — Le Pivot Stratégique</span>
+        <div class="reveal">
+            <h2>Changer d'Arme.</h2>
+            <blockquote>
+                "L'insuccès de l'an dernier n'est pas un défaut de vision, c'est un défaut de logistique. On ne gagne pas une guerre moderne avec des outils de fortune."
+            </blockquote>
+            <p style="margin-bottom: 4rem; max-width: 700px; color: rgba(255,255,255,0.6);">
+                Pour la saison prochaine, l'objectif n'est plus de "faire de la comm'", mais de déployer un système. Passer d'une production artisanale lente à une frappe chirurgicale automatisée. 
+            </p>
+            <div style="text-align: center;">
+                <a href="../04_Presentation/PRESENTATION_ARSENAL.html" class="btn">Découvrir la Riposte : L'Arsenal</a>
+            </div>
+        </div>
+    </section>
+
+    <footer style="padding: 5vh 10vw; text-align: center; font-family: 'Space Mono', monospace; font-size: 0.6rem; color: var(--muted); letter-spacing: 3px;">
+        RAPPORT D'AUDIT TACTIQUE — FDB // STUDIO DJEZO // CONFIDENTIEL
+    </footer>
+
+    <div id="cursor"></div>
+    <div id="cursor-ring"></div>
+
+    <script src="../04_Presentation/main_fdb.js"></script>
+</body>
+</html>
