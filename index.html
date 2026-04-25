@@ -33,6 +33,15 @@
             transform: scale(1.05);
             background: #e60000;
         }
+
+        @media (max-width: 768px) {
+                section { padding: 8vh 5vw; }
+                .audit-grid { grid-template-columns: 1fr; gap: 2rem; }
+                h2 { font-size: 2.2rem; }
+                .hero h1 { font-size: clamp(3rem, 15vw, 5rem); letter-spacing: -2px; }
+                blockquote { padding-left: 1.5rem; font-size: 1rem; }
+        }
+        
     </style>
 </head>
 <body>
