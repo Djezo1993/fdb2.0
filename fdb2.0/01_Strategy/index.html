@@ -33,6 +33,74 @@
             transform: scale(1.05);
             background: #e60000;
         }
+
+        @media (max-width: 768px) {
+            .audit-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                margin-top: 2rem;
+            }
+
+            .audit-card {
+                padding: 1.25rem;
+            }
+
+            .metric-big {
+                font-size: 2.5rem;
+            }
+
+            .perception-label {
+                flex-direction: column;
+                gap: 0.4rem;
+                font-size: 0.6rem;
+            }
+
+            .vs-line {
+                margin: 2.5rem 0;
+            }
+
+            blockquote {
+                padding-left: 1rem;
+                font-size: 0.9rem;
+            }
+
+            #conclusion .btn {
+                padding: 1.1rem 2rem;
+                letter-spacing: 1px;
+                font-size: 0.8rem;
+                display: block;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .audit-grid {
+                gap: 1rem;
+            }
+
+            .audit-card {
+                padding: 1rem;
+            }
+
+            .metric-big {
+                font-size: 2rem;
+            }
+
+            .perception-label {
+                font-size: 0.55rem;
+            }
+
+            blockquote {
+                font-size: 0.85rem;
+                margin: 1.5rem 0;
+            }
+
+            #conclusion .btn {
+                padding: 1rem 1.5rem;
+                font-size: 0.75rem;
+                letter-spacing: 0.5px;
+            }
+        }
     </style>
 </head>
 <body>
